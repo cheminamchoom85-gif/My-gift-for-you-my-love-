@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Kuchupuchu ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+text-align:center;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+overflow-x:hidden;
+}
+
+h1{
+margin-top:40px;
+font-size:40px;
+}
+
+.date{
+font-size:22px;
+}
+
+.gallery{
+margin-top:30px;
+}
+
+.gallery img{
+width:250px;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+.letter{
+background:white;
+color:#333;
+max-width:600px;
+margin:40px auto;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+line-height:1.6;
+}
+
+.heart{
+position:fixed;
+top:-10px;
+color:red;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10px);}
+100%{transform:translateY(100vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Happy Birthday My Kuchupuchu ❤️</h1>
+<p class="date">23 March 🎂</p>
+
+<audio id="song" autoplay loop>
+<source src="made-in-japan.mp3" type="audio/mpeg">
+</audio>
+
+<h2>Our Memories 📸</h2>
+
+<div class="gallery">
+<img id="slide" src="photo1.jpg">
+</div>
+
+<div class="letter">
+
+<h2>A Letter For You 💌</h2>
+
+<p>My dearest Kuchupuchu,</p>
+
+<p>
+Happy Birthday to the most beautiful person in my life.
+You are my happiness, my smile, and my favorite person.
+</p>
+
+<p>
+Every moment with you is special to me and I feel so lucky
+to have you in my life.
+</p>
+
+<p>
+I hope your birthday is filled with love, laughter,
+and all the happiness in the world.
+</p>
+
+<p>
+I love you so much ❤️
+</p>
+
+<p>
+Forever yours,<br>
+Your Love
+</p>
+
+</div>
+
+<script>
+
+window.onload = function(){
+document.getElementById("song").play().catch(()=>{});
+}
+
+let photos = ["photo1.jpg","photo2.jpg","photo3.jpg"];
+let i = 0;
+
+setInterval(function(){
+i++;
+if(i>=photos.length){i=0;}
+document.getElementById("slide").src = photos[i];
+},3000);
+
+function createHeart(){
+let heart = document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},5000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
